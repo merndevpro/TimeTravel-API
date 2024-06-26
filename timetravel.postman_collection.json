@@ -1,0 +1,515 @@
+{
+	"info": {
+		"_postman_id": "7054384a-c13c-4e95-8dc6-1d4e1276cecf",
+		"name": "timetravel",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://localhost:5001/auth/register",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": " {\r\n      \"email\":\"test@test.com\",\r\n      \"password\":\"test\",\r\n      \"phone\":\"111\",\r\n       \"firstname\":\"test\",\r\n      \"lastname\":\"test\"   \r\n      \r\n }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5001/api/v1/auth/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"api",
+						"v1",
+						"auth",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:5001/auth/login",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": " {\r\n      \"email\":\"test@test.com\",\r\n      \"password\":\"test\"    \r\n }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5001/api/v1/auth/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"api",
+						"v1",
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:5001/auth/refreshToken",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": " {\r\n              \"refreshToken\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI0NGJlODM2Yi0zZWI1LTQ0YjEtYjI0MC02MGNjOGRiMDQyMjgiLCJqdGkiOiIwODAyNzAyMC1mOGQxLTRkMjUtODMyYS1mYzljNjJhYmNiN2QiLCJpYXQiOjE2NjgxODQ3OTAsImV4cCI6MTY2ODIxMzU5MH0.pB04tJ9MnW0KXozkk4CHGYutrtJwhEV0YEXY5HP-Q8M\"\r\n }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5001/api/v1/auth/refreshToken",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"api",
+						"v1",
+						"auth",
+						"refreshToken"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:5001/auth/getuser",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJmZWIzYTNjYy1jZTdiLTQ4ZjYtYThkZC1kZjkyMjA3ZmY2NTkiLCJpYXQiOjE2Njc5MTA2MjAsImV4cCI6MTY2NzkxMDkyMH0.bL_A1JqLRXt7aBHMOrxX6YEAOC11ZK0w7svCtDbYWaU",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": " {\r\n      \"email\":\"test@test.com\",\r\n      \"password\":\"test\"    \r\n }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5001/user/profile",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"user",
+						"profile"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:5001/blog/create",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI0NGJlODM2Yi0zZWI1LTQ0YjEtYjI0MC02MGNjOGRiMDQyMjgiLCJpYXQiOjE2NjgxODU3NzQsImV4cCI6MTY2ODE4OTM3NH0._A4QGXJCgPaKvFCN5LG2dMMgdDAhBjyyKcLPJOAtw0k",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"blog_title\",\r\n    \"description\": \"blog_description\",\r\n    \"content\": \"blog_content\",\r\n    \"slug\": \"blog_slug\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5001/api/v1/blog/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"api",
+						"v1",
+						"blog",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:5001/blog/read",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI0NGJlODM2Yi0zZWI1LTQ0YjEtYjI0MC02MGNjOGRiMDQyMjgiLCJpYXQiOjE2NjgyMTE4MTMsImV4cCI6MTY2ODIxNTQxM30.G-7u2pyJfaJ__sxdpt8Oy81ETFk-1G_nf156DhqTRp8",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5001/api/v1/blog/all?limit=1&pageNum=0",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"api",
+						"v1",
+						"blog",
+						"all"
+					],
+					"query": [
+						{
+							"key": "limit",
+							"value": "1"
+						},
+						{
+							"key": "pageNum",
+							"value": "0"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:5001/blog/add_comment",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI0NGJlODM2Yi0zZWI1LTQ0YjEtYjI0MC02MGNjOGRiMDQyMjgiLCJpYXQiOjE2NjgxODU3NzQsImV4cCI6MTY2ODE4OTM3NH0._A4QGXJCgPaKvFCN5LG2dMMgdDAhBjyyKcLPJOAtw0k",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"blog_title\",\r\n    \"description\": \"blog_description\",\r\n    \"content\": \"blog_content\",\r\n    \"slug\": \"blog_slug\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5001/api/v1/blog/add_comment",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"api",
+						"v1",
+						"blog",
+						"add_comment"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:5001/blog/read_one",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI0NGJlODM2Yi0zZWI1LTQ0YjEtYjI0MC02MGNjOGRiMDQyMjgiLCJpYXQiOjE2NjgyMTE4MTMsImV4cCI6MTY2ODIxNTQxM30.G-7u2pyJfaJ__sxdpt8Oy81ETFk-1G_nf156DhqTRp8",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"blogSlug\":\"blog_title_1_ad0ladchkga\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5001/api/v1/blog/read_one",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"api",
+						"v1",
+						"blog",
+						"read_one"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:5001/file/create",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTY2ODQ3OTc4OCwiZXhwIjoxNjY4NDgzMzg4fQ.NJHLHh3kKKn-GfI00lsLtJ-h18EMpEDJr8esmHVdN38",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": "/C:/Users/Tiger/Documents/160x600 – Warhammer 40K Single IP - PN.png"
+						}
+					],
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5001/api/v1/file/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"api",
+						"v1",
+						"file",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:5001/api/v1/file/delete",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"filename\":\"storage/images/blog/160x600 – Warhammer 40K Single IP - PN\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5001/api/v1/file/delete",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"api",
+						"v1",
+						"file",
+						"delete"
+					],
+					"query": [
+						{
+							"key": null,
+							"value": "",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:5001/api/v1/user/profile",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5001/api/v1/user/profile",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"api",
+						"v1",
+						"user",
+						"profile"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:5001/api/v1/user/update",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTY2ODczNjU2NCwiZXhwIjoxNjY4NzQwMTY0fQ.SBxACRWccnF3G9_-c6QySsmQvgP15FYsQPmgRkw7ZVU",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": " {\r\n            \"id\": 1,\r\n            \"email\": \"test@test.com\",\r\n            \"phone\": \"111\",\r\n            \"firstname\": \"test\",\r\n            \"lastname\": \"test\",          \r\n            \"avatar\": \"http://192.168.113.228:5001/Avatar/avatar.png\"\r\n }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5001/api/v1/user/update",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"api",
+						"v1",
+						"user",
+						"update"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:5001/api/v1/file/updateAvatar",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5001/api/v1/file/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"api",
+						"v1",
+						"file",
+						"create"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
